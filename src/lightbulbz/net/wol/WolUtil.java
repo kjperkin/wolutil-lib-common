@@ -1,22 +1,16 @@
 package lightbulbz.net.wol;
 
-import java.net.DatagramSocket;
-import java.net.DatagramPacket;
-import java.net.NetworkInterface;
-import java.net.InetAddress;
-import java.net.InterfaceAddress;
-import java.util.Set;
-import java.util.HashSet;
-import java.net.SocketException;
-import java.util.Enumeration;
-
 import lightbulbz.net.MacAddress;
-import lightbulbz.net.MacAddressFormatException;
+
+import java.net.*;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Set;
 
 public class WolUtil
 {
     public static void main(String[] argv) {
-        Set<InetAddress> broadcastAddresses = new HashSet<InetAddress>();
+        Set<InetAddress> broadcastAddresses = new HashSet<>();
         try {
             Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
             while (ifaces.hasMoreElements()) {
