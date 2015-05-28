@@ -13,7 +13,7 @@ public class MacAddress
         byte[] addrBytes = new byte[6];
         for (int i = 0; i < 6; ++i) {
             try {
-                addrBytes[i] = Byte.parseByte(parts[i], 16);
+                addrBytes[i] = MacAddress.parseByte(parts[i], 16);
             } catch (java.lang.NumberFormatException ex) {
                 throw new MacAddressFormatException("Invalid hex byte " + parts[i], ex);
             }
@@ -44,4 +44,15 @@ public class MacAddress
         // Trim the trailing ':'
         return sb.substring(0,sb.length()-1);
     }
+
+    public byte[] getAddressBytes()
+    {
+        return addrBytes.clone();
+    }
+
+    private static byte parseByte(String s, int radix) {
+        int i = Integer.parseInt(s, radix);
+        return (byte)(i & 0xFF);
+    }
+
 }
