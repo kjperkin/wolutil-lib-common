@@ -50,9 +50,8 @@ public class MacAddress
         return addrBytes.clone();
     }
 
-    private static byte parseByte(String s, int radix) {
-        int i = Integer.parseInt(s, radix);
-        return (byte)(i & 0xFF);
+    static byte parseByte(String s, int radix) {
+        return (byte) Integer.parseInt(s, radix);
     }
 
 }

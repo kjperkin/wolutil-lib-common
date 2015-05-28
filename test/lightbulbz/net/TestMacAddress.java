@@ -20,4 +20,15 @@ public class TestMacAddress extends TestCase {
         MacAddress expected = MacAddress.fromBytes(testBytes);
         Assert.assertArrayEquals(expected.getAddressBytes(), macAddress.getAddressBytes());
     }
+
+    public void testParseByte() throws Exception {
+        Assert.assertEquals((byte)0, MacAddress.parseByte("00", 16));
+        Assert.assertEquals((byte)0xff, MacAddress.parseByte("ff", 16));
+        Assert.assertEquals((byte)0x7f, MacAddress.parseByte("7f", 16));
+        Assert.assertEquals((byte)0, MacAddress.parseByte("0", 10));
+        Assert.assertEquals((byte)255, MacAddress.parseByte("255", 10));
+        Assert.assertEquals((byte)-128, MacAddress.parseByte("-128", 10));
+        Assert.assertEquals((byte)-128, MacAddress.parseByte("-128", 10));
+        Assert.assertEquals((byte)127, MacAddress.parseByte("127", 10));
+    }
 }
