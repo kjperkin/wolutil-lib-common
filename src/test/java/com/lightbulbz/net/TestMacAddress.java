@@ -1,4 +1,4 @@
-package lightbulbz.net;
+package com.lightbulbz.net;
 
 import junit.framework.TestCase;
 import org.junit.Assert;

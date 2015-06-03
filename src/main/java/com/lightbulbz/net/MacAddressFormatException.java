@@ -1,4 +1,4 @@
-package lightbulbz.net;
+package com.lightbulbz.net;
 
 public class MacAddressFormatException extends java.lang.IllegalArgumentException
 {

@@ -1,4 +1,4 @@
-package lightbulbz.net;
+package com.lightbulbz.net;
 
 public class MacAddress
 {
